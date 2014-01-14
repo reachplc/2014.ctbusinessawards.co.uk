@@ -1,0 +1,33 @@
+{
+  "name": "coventry-telegraph-business-awards-2014",
+  "license": "",
+  "private": true,
+  "description": "Coventry Telegraph Business Awards 2014",
+  "version": "0.0.1",
+  "homepage": "http://www.ctbusinessawards.co.uk/2014/",
+  "author": {
+    "name": "Trinity Mirror Creative",
+    "email": "",
+    "url": ""
+  },
+  "contributors": [
+    {
+      "name": "Michael Bragg",
+      "email": "michael@michaelbragg.net",
+      "url": "http://michaelbragg.net"
+    }
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "0.4.x",
+    "grunt-contrib-watch": "0.5.x",
+    "grunt-contrib-less": "0.9.x",
+    "grunt-shell": "0.6.x",
+    "grunt-contrib-clean": "0.5.x",
+    "grunt-express": "1.2.x",
+    "grunt-contrib-csslint": "0.2.x",
+    "grunt-htmlhint": "0.4.x",
+    "grunt-contrib-jshint": "0.8.x",
+    "grunt-gh-pages": "~0.9.0"
+  }
+}
