@@ -1,0 +1,47 @@
+<header id="header-wrapper">
+
+  <div id="topbar-wrap">
+
+    <div id="topbar">
+    <div id="cookies-link">
+      <a href="{{ site.url }}/cookies/"> How we use Cookies</a>
+    </div>
+
+    <div id="topbar-logo">
+      <img src="{{ site.static }}/gui/logo_business-awards-2014_coventry-telegraph.png" width="300" height="100" alt="2014 Coventry Telegraph Business Awards">
+    </div>
+
+    <div id = "termsmenu">
+      {% include templates/termsmenu.html %}</div>
+    </div>
+
+  </div>
+
+  <div id = "nav-menu">
+    {% include templates/navigation.html %}
+  </div>
+
+{% if page.hero %}
+<div id="header" class="hero">
+
+  <div id="header-inside">
+  {% if page.hero.image %}
+  <img src="{{ site.media }}/hero/{{ page.hero.image }}" alt="{{ page.hero.alt }}">
+  {% endif %}
+  {% if page.hero.copy %}
+  <div>
+    <a class="nominate" href="{{ page.hero.link}}">{{ page.hero.copy }}</a>
+  </div>
+  {% endif %}
+  </div>
+
+</div>
+{% endif %}
+
+{% if page.sponsors == true %}
+  {% include templates/sponsors.html %}
+{% endif %}
+
+</header>
+
+

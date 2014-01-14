@@ -1,0 +1,30 @@
+---
+layout: columns-two
+stylesheet:
+class: page__news
+
+title: News
+permalink: news/
+meta:
+  keywords:
+  description:
+  author:
+
+hero: false
+sponsors: false
+---
+
+
+{% for post in site.posts limit:5 %}
+  <article>
+
+    <h4>{{ post.title }}</h4>
+
+    <img src="{{ site.media }}/news/{{ post.images.main }}" alt="" style="margin-bottom: 2em; max-width: 100%;">
+
+    {{ post.excerpt }}
+
+    <a href="{{ post.url }}">Read More</a>
+
+  </article>
+{% endfor %}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+
+  <head>
+
+    {% include templates/prefetch.html %}
+    {% include templates/meta.html %}
+
+    <title>{% if page.title %}{{ page.title }} &ndash; {% endif %}{{ site.name }}</title>
+
+    {% include templates/favicon.html %}
+    {% include templates/css.html %}
+    {% include templates/javascript_head.html %}
+
+  </head>
+
+  <body {% if page.class %}class="{% for class in page.class %}{{ class }} {% endfor %}"{% endif %}>
+
+    <a href="#content" class="visuallyhidden focusable" title="Skip to Site Content" accesskey="s">Skip to page content</a>
+
+
+      {% include templates/header.html %}
+
+        {{ content }}
+
+      {% include templates/footer.html %}
+
+
+    {% include templates/javascript_body.html %}
+
+  </body>
+  </html>

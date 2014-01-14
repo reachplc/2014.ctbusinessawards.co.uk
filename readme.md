@@ -9,6 +9,7 @@
 
 - NodeJS
   - Grunt
+  - LESS CSS
 - Ruby
   - Jekyll
 
@@ -24,12 +25,24 @@ gem install jekyll
 ### Run Development Server
 
 ```
-grunt dev
+grunt
 ```
 
 Visit the url [localhost:3000](http://localhost:3000/) to view the site.
 
 ### Deploy Build
+
+#### Staging
+
+For testing and proofing we deploy to a staging server before deploying to production.
+
+```
+grunt stage
+```
+
+This push the changes to the `gh-pages` branch and allows us to view the site via [http://trinitymirror.github.io/2014.ctbusinessawards.co.uk/](http://trinitymirror.github.io/2014.ctbusinessawards.co.uk/).
+
+#### Production
 
 
 ## Documentation

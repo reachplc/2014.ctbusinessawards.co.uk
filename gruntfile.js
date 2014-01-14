@@ -2,7 +2,26 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+
+  //  Config
     pkg: grunt.file.readJSON('package.json')
+
+   ,config: {
+      dev: {
+        options: {
+          variables: {
+            'dest': '_site'
+          }
+        }
+      },
+      deploy: {
+        options: {
+          variables: {
+            'dest': '2014'
+          }
+        }
+      }
+    }
 
   //  Build Site
 
@@ -19,7 +38,7 @@ module.exports = function(grunt) {
         options: {
           port: 3000,
           hostname: 'localhost',
-          bases: '_site'
+          bases: '<%= grunt.config.get("dest") %>'
         }
       }
     }
@@ -29,12 +48,12 @@ module.exports = function(grunt) {
         command: 'jekyll build'
       },
       jekyll_deploy: {
-        command: 'jekyll build --destination 2014'
+        command: 'jekyll build --destination <%= grunt.config.get("dest") %>'
       }
     }
 
    ,clean: {
-      files: ['src/_site']
+      files: ['<%= grunt.config.get("dest") %>']
     }
 
   // Compile
@@ -45,7 +64,7 @@ module.exports = function(grunt) {
         paths: ['html/static/css']
         }
        ,files: {
-        'arc/static/css/global.css': ['src/_includes/less/global.less']
+        'src/static/css/global.css': ['src/_includes/less/global.less']
         }
       }
     }
@@ -66,7 +85,7 @@ module.exports = function(grunt) {
         'src-not-empty': true,
         'img-alt-require': true
       },
-      src: ['_site/**/*.html']
+      src: ['<%= grunt.config.get("dest") %>/**/*.html']
 
     }
 
@@ -79,7 +98,7 @@ module.exports = function(grunt) {
         'universal-selector': false,
         'font-sizes': false  //  Until CSSLint has the option to set an ammount
       },
-      src: ['_site/static/css/*.css']
+      src: ['<%= grunt.config.get("dest") %>/static/css/*.css']
     }
 
    ,jshint: {
@@ -100,7 +119,7 @@ module.exports = function(grunt) {
           jQuery: true
         }
       },
-      src: ['gruntfile.js', '_sites/static/js/*.js']
+      src: ['gruntfile.js', '<%= grunt.config.get("dest") %>/static/js/*.js']
     }
 
   // Optimise
@@ -114,13 +133,13 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'src/static/gui',
           src: ['**/*.{png,jpg,gif}'],
-          dest: '_site/static/gui'
+          dest: '<%= grunt.config.get("dest") %>/static/gui'
         },
         {
           expand: true,
           cwd: 'src/static/media',
           src: ['**/*.{png,jpg,gif}'],
-          dest: '_site/static/media'
+          dest: '<%= grunt.config.get("dest") %>/static/media'
         }]
       }
     }
@@ -129,12 +148,12 @@ module.exports = function(grunt) {
 
   ,'gh-pages': {
     options: {
-      base: '_site',
+      base: '<%= grunt.config.get("dest") %>',
       branch: 'gh-pages',
-      repo: 'https://example.com/other/repo.git',
+      add: true,
       push: true
     },
-    src: '**/*'
+    src: ['**/*', '!gruntfile.js', '!package.json', '!readme.md', '!_config.yml' ]
   }
 
   });
@@ -151,14 +170,15 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-gh-pages');
+  grunt.loadNpmTasks('grunt-config');
 
   // Options
 
   grunt.registerTask('default', ['dev', 'serve']);
   grunt.registerTask('test', ['htmlhint', 'csslint', 'jshint']);
   grunt.registerTask('optim', ['imagemin']);
-  grunt.registerTask('dev', ['clean', 'less', 'shell:jekyll_dev']);
+  grunt.registerTask('dev', ['config:dev', 'clean', 'less', 'shell:jekyll_dev']);
   grunt.registerTask('serve', ['express', 'watch']);
-  grunt.registerTask('stage', ['dev', 'optim']);
+  grunt.registerTask('stage', ['config:deploy', 'clean', 'less', 'shell:jekyll_deploy', 'optim', 'gh-pages']);
 
 };
