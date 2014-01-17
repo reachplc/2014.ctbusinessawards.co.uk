@@ -52,6 +52,14 @@ module.exports = function(grunt) {
       }
     }
 
+   ,copy: {
+      bower: {
+        files: [
+          { expand: true, flatten: true, cwd: 'bower_components', src: ['html5shiv/dist/html5shiv.js'], dest: '<%= grunt.config.get("dest") %>/static/js/lib'}
+        ]
+      }
+    }
+
    ,clean: {
       files: ['<%= grunt.config.get("dest") %>']
     }
@@ -171,14 +179,15 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-gh-pages');
   grunt.loadNpmTasks('grunt-config');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Options
 
   grunt.registerTask('default', ['dev', 'serve']);
   grunt.registerTask('test', ['htmlhint', 'csslint', 'jshint']);
   grunt.registerTask('optim', ['imagemin']);
-  grunt.registerTask('dev', ['config:dev', 'clean', 'less', 'shell:jekyll_dev']);
+  grunt.registerTask('dev', ['config:dev', 'clean', 'less', 'shell:jekyll_dev', 'copy']);
   grunt.registerTask('serve', ['express', 'watch']);
-  grunt.registerTask('stage', ['config:deploy', 'clean', 'less', 'shell:jekyll_deploy', 'optim', 'gh-pages']);
+  grunt.registerTask('stage', ['config:deploy', 'clean', 'less', 'shell:jekyll_deploy', 'copy', 'optim', 'gh-pages']);
 
 };
