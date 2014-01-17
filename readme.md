@@ -44,6 +44,13 @@ This push the changes to the `gh-pages` branch and allows us to view the site vi
 
 #### Production
 
+To build the site for deployment:
+
+```
+grunt deploy
+```
+
+This will produce a `./2014` folder that can be uploaded to the server.
 
 ## Documentation
 
