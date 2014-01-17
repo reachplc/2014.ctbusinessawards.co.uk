@@ -1,7 +1,19 @@
-<aside class="news-wrap">
+<aside class="sidebar">
+
+<section class="block">
+
+<h4>Awards Ceremony</h4>
+
+<p>Coventry Cathedral, Friday&nbsp;20<sup>th</sup>&nbsp;June&nbsp;2014</p>
+
+<p>
+  <a class="btn primary" href="{{ post.url }}/book-a-table/">Book your table now</a>
+</p>
+
+</section>
 
 {% for post in site.posts limit:3 %}
-  <article class="news">
+  <article>
     <h4>{{ post.title }}</h4>
     <img src="{{ site.media }}/news/{{ post.images.preview }}" alt="">
     <p>The 2013 Coventry Telegraph Business Awards winners.</p>
