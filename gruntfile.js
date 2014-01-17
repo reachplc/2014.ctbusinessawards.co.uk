@@ -155,7 +155,7 @@ module.exports = function(grunt) {
         },
         {
           expand: true,
-          cwd: 'src/static/media',
+          cwd: 'src/media',
           src: ['**/*.{png,jpg,gif}'],
           dest: '<%= grunt.config.get("dest") %>/static/media'
         }]
