@@ -14,6 +14,13 @@ module.exports = function(grunt) {
           }
         }
       },
+      stage: {
+        options: {
+          variables: {
+            'dest': 'beta'
+          }
+        }
+      },
       deploy: {
         options: {
           variables: {
@@ -47,8 +54,11 @@ module.exports = function(grunt) {
       jekyll_dev: {
         command: 'jekyll build'
       },
-      jekyll_deploy: {
+      jekyll_stage: {
         command: 'jekyll build --destination <%= grunt.config.get("dest") %>'
+      },
+      jekyll_deploy: {
+        command: 'jekyll build --destination <%= grunt.config.get("dest") %> --config _config.production.yml'
       }
     }
 
@@ -69,7 +79,7 @@ module.exports = function(grunt) {
    ,less: {
       development: {
         options: {
-        paths: ['html/static/css']
+        paths: ['src/static/css']
         }
        ,files: {
         'src/static/css/global.css': ['src/_includes/less/global.less']
@@ -188,6 +198,6 @@ module.exports = function(grunt) {
   grunt.registerTask('optim', ['imagemin']);
   grunt.registerTask('dev', ['config:dev', 'clean', 'less', 'shell:jekyll_dev', 'copy']);
   grunt.registerTask('serve', ['express', 'watch']);
-  grunt.registerTask('stage', ['config:deploy', 'clean', 'less', 'shell:jekyll_deploy', 'copy', 'optim', 'gh-pages']);
-
+  grunt.registerTask('stage', ['config:stage', 'clean', 'less', 'shell:jekyll_stage', 'copy', 'optim', 'gh-pages']);
+  grunt.registerTask('deploy', ['config:deploy', 'clean', 'less', 'shell:jekyll_deploy', 'copy', 'optim']);
 };
