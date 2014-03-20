@@ -18,3 +18,17 @@ Despite the challenging climate, nominations for these awards arrived by the doz
 The night was hosted by Midlands TV presenter Kay Alexander who said, "Coventry and it's famous newspaper have always been an important part of business and civic life in the West Midlands, so I am delighted and honoured to be presenting their Business Awards".
 
 After eleven awards there was a surprise award; the Coventry Telegraph Lifetime Achievement Award which saw former Coventry and Warwickshire Chamber of Commerce Director of Policy, Alan Durham receive this accolade for his crucial work with the region's business community.
+
+- **Marketing Project/Campaign Award:** Mask-arade
+- **Professional Services Award:** Rhead Group
+- **Green Business Award:** GI Energy
+- **Manufacturing, Science and Technology Award:** Penso Consulting
+- **Hospitality, Leisure and Events Award:** Belgrade Theatre
+- **Export Award:** Katronic Technologies
+- **Training and People Development Award:** Pailton Engineering
+- **Small Management Enterprise and Business Start Up Award:** Serious Games International
+- **Customer Service Award:** Aesthetics Event Staff
+- **Medium to Large Business Award:** Automotive Insulations
+- **Emerging Professional Award:** Leigh Mackey, Inspire Insurance Services
+- **Life Time Achievement Award:** Alan Durham
+- **Company of the Year Award:** Pailton Engineering
