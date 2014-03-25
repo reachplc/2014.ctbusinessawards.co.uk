@@ -40,7 +40,7 @@ For testing and proofing we deploy to a staging server before deploying to produ
 grunt stage
 ```
 
-This push the changes to the `gh-pages` branch and allows us to view the site via [http://trinitymirror.github.io/2014.ctbusinessawards.co.uk/](http://trinitymirror.github.io/2014.ctbusinessawards.co.uk/).
+This push the changes to the `gh-pages` branch and allows us to view the site via [http://beta.ctbusinessawards.co.uk/](http://beta.ctbusinessawards.co.uk/).
 
 #### Production
 
@@ -55,6 +55,25 @@ This will produce a `./2014` folder that can be uploaded to the server.
 ## Documentation
 
 During the Alpha/Beta stages, due to constant changes, documentation will be mainly written in-line. With a dedicated section being created at the first major release.
+
+### Adding a new News Post
+
+To write a new news post create a new markdown document in the `src/_posts` folder. Add the following YAML to the top of the page filling in details for title, date and images:
+
+```
+---
+layout: news
+
+title:
+categories: news
+date:
+published: true
+
+images:
+ main:
+ preview:
+---
+```
 
 ### File Structure
 
