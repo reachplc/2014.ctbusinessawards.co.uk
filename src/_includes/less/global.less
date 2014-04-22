@@ -106,11 +106,8 @@ H1 {
 
 h3 {
   COLOR: #444444;
-  FONT-SIZE: 14px;
-  background-image: url(../gui/separator.png);
+  font-size: 14px;
   padding-bottom: 22px;
-  background-repeat: no-repeat;
-  background-position: bottom;
   line-height: 22px;
   text-align: left;
 }
@@ -124,19 +121,8 @@ h4, .delta {
   font-size: 17px;
   font-weight: bold;
   margin-left: 0;
-  padding-left: 15px;
-  background-color: #E9E9E9;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  border-top-width: 5px;
-  border-top-style: solid;
-  border-top-color: #274296;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: #CCC;
-
 }
+
 H4.platinum {
   COLOR: #717171
 }
@@ -162,6 +148,21 @@ h5 {
 h6 {
   COLOR: #444444;
   FONT-SIZE: 18px;
+}
+
+.heading--main {
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  border-top-width: 5px;
+  border-top-style: solid;
+  border-top-color: #274296;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #ccc;
+  background-color: #E9E9E9;
+
 }
 
 code, pre {
@@ -200,6 +201,29 @@ video{
   width:100%;
   height:450px;
 }
+
+/**
+ * objects
+ */
+
+//
+// 1. Removes bullets
+// 2. Removes default margin for ul
+// 3. Removes default padding
+//
+
+.list {
+  list-style:none;  // 1.
+  margin-top: 0;  // 2.
+  margin-bottom: 0;  // 2.
+  padding-left:0;  // 3.
+}
+
+.list > li {
+  display: block;
+}
+
+
 
 /*  --  Start: Header Module  --  */
 
@@ -870,6 +894,10 @@ a:hover.btn.primary {
 
 }
 
+/**
+ * Block
+ */
+
 .block {
   margin-bottom: 1em;
 }
@@ -891,6 +919,39 @@ a:hover.btn.primary {
     float: right;
     margin-left: 10px;
   }
+
+//
+//  Judges
+//
+
+.judges-item__content h3,
+.judges-item__content h4,
+.judges-item__content p {
+  padding-right: 14.5px;
+  padding-left: 14.5px;
+}
+
+.judges-item__aside {
+  width: 33.333%;
+  padding-right: 29px;
+  margin-right: 0;
+}
+
+//
+// Sponsors
+//
+
+.sponsors-item__content {
+  display: block;
+}
+
+.sponsors-item__aside {
+  width: 33.333%;
+  padding-right: 14.5px;
+  margin-right: 0;
+}
+
+
 
 /**
  * Button
