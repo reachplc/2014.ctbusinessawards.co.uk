@@ -223,6 +223,67 @@ video{
   display: block;
 }
 
+/**
+ * Gallery
+ * Example:
+      <ul class="gallery"">
+        <li class="gallery__item">
+          <img src="example.jpg" alt="">
+        </li>
+      </ul>
+ *
+ */
+
+.gallery {
+  width: 100%;
+}
+
+  .gallery * {
+    -moz-box-sizing: border-box;  // For all versions of firefox
+    -webkit-box-sizing: border-box;  // Android 2.1-3.0, iOS Webkit 3.2 - 4.3 & Blackberry 7.0
+    box-sizing: border-box;
+  }
+
+  .gallery--header {
+    margin-bottom: 29px;
+  }
+
+  .gallery__item {
+    float: left;
+    display: block;
+    margin-bottom: 29px;
+    padding-left: 14.5px;
+    padding-right: 14.5px;
+  }
+
+  .gallery__item img {
+    max-width: 100%;
+    height: inherit;
+  }
+
+  .lt-ie9 .gallery--image img {
+    width: 100%;
+  }
+
+  .gallery__item {
+    width: 136.4px;
+    width: 20%;
+  }
+
+  //  Remove left padding for right items
+  .gallery__item:nth-child(5n+1) {
+    padding-left: 0px;
+    width: 121.9px;
+    width: 18.6676%;
+  }
+
+  //  Remove right padding for left items
+  .gallery__item:nth-child(5n+5) {
+    padding-right: 0;
+    width: 121.9px;
+    width: 18.6676%;
+  }
+
 
 
 /*  --  Start: Header Module  --  */
@@ -998,7 +1059,7 @@ border: solid 1px #ccc;
 
 .sponsors-bar {
   margin-bottom: 1em;
-  padding-top: 1em;
+  padding-top: 2em !important;
 }
 
 /**
@@ -1046,18 +1107,29 @@ border: solid 1px #ccc;
   padding-right: 14.5px;
 }
 
+  .wrapper__sub > * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    box-sizing:         border-box;
+  }
+
 .grid__seperator {
   border-left: 1px solid #ccc;
 }
 
 .ls__1 {
-  width: 33.33334%;
+  width: 33.3334%;
+  padding-left: 0;
 }
 
 .ls__1-2,
 .ls__2-3 {
-  width: 66.66667%;
+  width: 66.6667%;
 }
+
+  .ls__2-3 {
+    padding-right: 29px;
+  }
 
 .ls__1-3 {
   width: 100%;
