@@ -164,16 +164,6 @@ module.exports = function(grunt) {
 
   // Deploy
 
-  ,'gh-pages': {
-    options: {
-      base: '<%= grunt.config.get("dest") %>',
-      branch: 'gh-pages',
-      add: true,
-      push: true
-    },
-    src: ['**/*', '!gruntfile.js', '!package.json', '!readme.md', '!_config.yml' ]
-  }
-
   });
 
   // Tasks
@@ -187,7 +177,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
-  grunt.loadNpmTasks('grunt-gh-pages');
   grunt.loadNpmTasks('grunt-config');
   grunt.loadNpmTasks('grunt-contrib-copy');
 
@@ -198,6 +187,6 @@ module.exports = function(grunt) {
   grunt.registerTask('optim', ['imagemin']);
   grunt.registerTask('dev', ['config:dev', 'clean', 'less', 'shell:jekyll_dev', 'copy']);
   grunt.registerTask('serve', ['express', 'watch']);
-  grunt.registerTask('stage', ['config:stage', 'clean', 'less', 'shell:jekyll_stage', 'copy', 'optim', 'gh-pages']);
+  grunt.registerTask('stage', ['config:stage', 'clean', 'less', 'shell:jekyll_stage', 'copy', 'optim']);
   grunt.registerTask('deploy', ['config:deploy', 'clean', 'less', 'shell:jekyll_deploy', 'copy', 'optim']);
 };
