@@ -16,7 +16,7 @@
   <article>
     <h4 class="heading--main">{{ post.title }}</h4>
     <img src="{{ site.media }}/news/{{ post.images.preview }}" alt="">
-    <p>The 2013 Coventry Telegraph Business Awards winners.</p>
+    {{ post.excerpt }}
     <p>
       <a class="btn primary" href="{{ site.url}}{{ post.url }}">View Now</a>
     </p>
