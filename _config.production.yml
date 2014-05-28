@@ -6,6 +6,7 @@ safe: true
 
 source: ./src
 destination: ./_site
+relative_permalinks: false
 
 timezone: Europe/London
 

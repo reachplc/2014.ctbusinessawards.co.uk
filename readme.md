@@ -12,6 +12,7 @@
   - LESS CSS
 - Ruby
   - Jekyll
+  - RDiscount
 
 ## Instructions
 
