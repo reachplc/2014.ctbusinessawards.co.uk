@@ -21,4 +21,4 @@ Coventry Telegraph editor Alun Thorne said: “I can genuinely say that this is 
 
 “Now that the judging is complete we are now looking forward to an excellent night on June 20 when I am determined that we will set a new benchmark for an event of this kind and I would urge everybody to come and join us.”
 
-<a href="{{ site.url }}/shortlist/" class="btn primary btn--primary">View the shorlist</a>
+<a href="{{ site.url }}/shortlist/" class="btn primary btn--primary">View the shortist</a>
