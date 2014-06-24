@@ -106,6 +106,10 @@ In lieu of a formal style guide, take care to maintain the existing coding style
 
 ## Contact
 
+## License
+
+The source is opened for educational purposes. No rights are assigned to any downloads or forks.
+
 ## Copyright
 
 Unless otherwise stated &copy; Trinity Mirror Creative. All rights reserved.
